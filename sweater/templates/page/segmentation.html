@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %} Сегментация {% endblock %}
+
+{% block content %}
+
+        <form action="/segmentation_upload" method="POST" enctype="multipart/form-data">
+           <div class="form-group">
+                <label for="formFile" class="form-label text-white">Выберите фотографию для сегментации</label>
+                <input type="file" name="file" class="form-control" id="formFile" required>
+                <button type="submit" class="btn btn-danger mt-2">Загрузить фото</button>
+           </div>
+        </form>
+
+
+        {% if filepath %}
+            <img src=" {{ url_for('static', filename='uploads/' + filepath) }}" alt="Фото" class="m-lg-4 img-thumbnail image">
+        {% endif %}
+
+{% endblock %}

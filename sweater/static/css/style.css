@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    overflow: hidden;
+}
+
+.classification {
+    width: 256px;
+    height: 256px;
+    background: #fff;
+}
+
+.image {
+     width: 256px;
+    height: 256px;
+}
+
+header {
+    background: #080c17;
+}

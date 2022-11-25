@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %} Классификация {% endblock %}
+
+{% block content %}
+
+        <form action="/classification_upload" method="POST" enctype="multipart/form-data">
+           <div class="form-group">
+                <label for="formFile" class="form-label text-white">Выберите фотографию для классификации</label>
+                <input type="file" name="file" class="form-control" id="formFile" required>
+                <button type="submit" class="btn btn-danger mt-2">Загрузить фото</button>
+           </div>
+        </form>
+
+        {% if classification %}
+            <div class="result d-flex">
+                <div class="classification m-lg-4 img-thumbnail p-3">
+
+                <div class="classification-text fw-bold text-center fs-3 text-decoration-underline">
+                    Классификация
+                </div>
+
+                <div class="classification_result d-flex flex-column justify-content-center ">
+                    <div class="mt-1 property">
+                        <div class="fw-bold">Пол</div>
+                        <div class="property__text">
+                            {% if classification['male'] == 1 %}
+                                Мужской
+                            {% else %}
+                                Женский
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="mt-1 property">
+                         <div class="fw-bold">Улыбается</div>
+                         <div class="property__text">
+                             {% if classification['smile'] == 1 %}
+                                Да
+                            {% else %}
+                                Нет
+                            {% endif %}
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+                <img src=" {{ url_for('static', filename='uploads/' + filepath) }}" alt="Фото" class="m-lg-4 img-thumbnail image">
+            </div>
+        {% endif %}
+
+{% endblock %}
