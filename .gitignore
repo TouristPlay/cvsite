@@ -11,6 +11,7 @@ __pycache__/
 build/
 develop-eggs/
 models/
+sweater/static/uploads/
 dist/
 downloads/
 eggs/
