@@ -10,8 +10,8 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-models/
-sweater/static/uploads/
+models/*
+sweater/static/uploads/*
 dist/
 downloads/
 eggs/
